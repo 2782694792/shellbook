@@ -1,15 +1,22 @@
+#! /bin/bash
+
+# Only one-dimensional arrays are supported
+
 ## Parentheses denote, separated by Spaces
 value0="00"
 value1="01"
 value2="02"
 value3="03"
+array_name=($value0 $value1 $value2 $value3)
+for i in ${array_name[@]}; do
+    echo $i
+done
 
-array_name=(value0 value1 value2 value3)
 array_name=(
-v0
-val1
-value2
-valueee3
+    A 
+    B 
+    "C" 
+    D
 )
 
 ## read elements
@@ -40,6 +47,6 @@ echo $length
 length=${#array_name[*]}
 echo $length
 echo 'get length in single elements with index n'
-lengthn=${#array_name[3]}
-echo ${array_name[3]} $lengthn # valueee3 8
+lengthn=${#array_name[2]}
+echo ${array_name[2]} $lengthn # valueee3 8
 
